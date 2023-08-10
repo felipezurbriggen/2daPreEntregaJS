@@ -6,7 +6,7 @@
 
 alert("Si no está registrado, lo invitamos a hacerlo");
 
-class Usuarios {
+class Usuario {
   constructor(email, clave, nombre) {
     this.email = email;
     this.clave = clave;
@@ -14,15 +14,15 @@ class Usuarios {
   }
 }
 
-let listaDeUsuarios = [];
+let Usuarios = [];
 
 function ingresarUsuario() {
   let email = prompt("Proceso de registro, Ingrese su email");
   let clave = prompt("Proceso de registro, Ingrese una clave");
   let nombre = prompt("Proceso de registro, Ingrese su nombre");
 
-  let nuevoUsuario = new Usuarios(email, clave, nombre);
-  listaDeUsuarios.push(nuevoUsuario);
+  let nuevoUsuario = new Usuario(email, clave, nombre);
+  Usuarios.push(nuevoUsuario);
 }
 ingresarUsuario();
 
@@ -33,7 +33,7 @@ function buscarUsuario(confirmarMail) {
   return confirmarMail.email == chequearEmail;
 }
 
-let resultadoEmail = listaDeUsuarios.find(buscarUsuario);
+let resultadoEmail = Usuarios.find(buscarUsuario);
 if (resultadoEmail == undefined) {
   alert("Usuerio no encontrado, debe registrarse para comprar");
 } else {
@@ -43,7 +43,7 @@ if (resultadoEmail == undefined) {
   }
 }
 
-let resultadoClave = listaDeUsuarios.find(buscarClave);
+let resultadoClave = Usuarios.find(buscarClave);
 
 if (resultadoClave == undefined) {
   alert("Su clave no coincide, debe registrarse para comprar");
@@ -183,13 +183,6 @@ if (numeroElegido === 1) {
     }
   }
 }
-/* EN CASO DE QUE EL USUARIO HUBIERA SELECCIONADO UN EQUIPO */
-while (
-  numeroElegido === 1 ||
-  numeroElegido === 2 ||
-  numeroElegido === 3 ||
-  numeroElegido === 4
-) {
+{
   alert("GRACIAS POR SU VISITA");
-  break;
 }
